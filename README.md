@@ -2,30 +2,6 @@
 
 An automated analytics and natural-language insight generation engine for district-level healthcare performance monitoring. Built with Python, Pandas, and Streamlit.
 
----
-
-## 📋 Table of Contents
-1. [Overview & Problem Statement](#overview--problem-statement)
-2. [Key Features & Rubric Coverage](#key-features--rubric-coverage)
-3. [Project Structure](#project-structure)
-4. [Installation & Setup](#installation--setup)
-5. [Usage Instructions](#usage-instructions)
-   - [CLI Pipeline](#1-running-the-cli-pipeline)
-   - [Interactive Streamlit UI Dashboard](#2-running-the-interactive-streamlit-ui)
-   - [Running Automated Unit Tests](#3-running-automated-unit-tests)
-   - [Jupyter Notebook](#4-jupyter-notebook)
-6. [Analytical Methodology](#analytical-methodology)
-   - [Part A: Ingestion & Validation](#part-a-data-loading--validation)
-   - [Part B: Trend Detection](#part-b-trend-detection)
-   - [Part C: Outlier Detection (IQR & Z-Score)](#part-c-outlier-detection)
-   - [Part D: Pearson Correlation Matrix](#part-d-correlation-detection)
-   - [Part E: Dynamic Insight Generation & Severity Logic](#part-e-automated-insight-generation)
-   - [Part F: Interactive Visualizations](#part-f-ui--visualizations)
-7. [Statistical Limitation Notice](#statistical-limitation-notice)
-8. [Sample Output](#sample-output)
-9. [Evaluation Checklist](#evaluation-checklist-1010-marks)
-
----
 
 ## 📌 Overview & Problem Statement
 
@@ -46,13 +22,13 @@ This project delivers an **Auto-Analytics Engine** that:
 
 | Criterion | Rubric | Implementation Highlights |
 |---|---|---|
-| **Part A: Loading & Validation** | 1.5 Marks | Pandas ingestion, schema checker, `.head()`, `.info()`, missing-value count reports, live UI filters. |
-| **Part B: Trend Detection** | 2.0 Marks | Percentage change calculation between consecutive months; flags significant shifts with configurable threshold (default: $\pm 10\%$). |
-| **Part C: Outlier Detection** | 2.0 Marks | Dual implementation: **IQR Fence Rule** ($Q_1 - 1.5 \times \text{IQR}$, $Q_3 + 1.5 \times \text{IQR}$) and **Z-Score** ($|z| \ge \text{threshold}$); configurable via UI sliders. |
-| **Part D: Correlation Detection** | 1.5 Marks | Computes Pearson correlation matrix; flags pairs where $|r| \ge 0.70$; documents small-sample fragility limitation. |
-| **Part E: Dynamic Insight Generation** | 2.0 Marks | Generates standardized schema (`insight_id`, `type`, `indicator`, `entity`, `period`, `value`, `prev_value`, `change_pct`, `severity`, `explanation`); severity derived mathematically from data. |
-| **Part F: UI & Visualizations** | 1.0 Marks | Streamlit app featuring Severity Breakdown (Bar), Temporal Trend (Line), Correlation Heatmap, and Outlier Distribution (Boxplot). |
-| **Total** | **10 / 10** | **Complete coverage with CLI, web UI, tests, and deliverables.** |
+| **Part A: Loading & Validation** | Pandas ingestion, schema checker, `.head()`, `.info()`, missing-value count reports, live UI filters. |
+| **Part B: Trend Detection** | Percentage change calculation between consecutive months; flags significant shifts with configurable threshold (default: $\pm 10\%$). |
+| **Part C: Outlier Detection** | Dual implementation: **IQR Fence Rule** ($Q_1 - 1.5 \times \text{IQR}$, $Q_3 + 1.5 \times \text{IQR}$) and **Z-Score** ($|z| \ge \text{threshold}$); configurable via UI sliders. |
+| **Part D: Correlation Detection**  | Computes Pearson correlation matrix; flags pairs where $|r| \ge 0.70$; documents small-sample fragility limitation. |
+| **Part E: Dynamic Insight Generation** | Generates standardized schema (`insight_id`, `type`, `indicator`, `entity`, `period`, `value`, `prev_value`, `change_pct`, `severity`, `explanation`); severity derived mathematically from data. |
+| **Part F: UI & Visualizations**  | Streamlit app featuring Severity Breakdown (Bar), Temporal Trend (Line), Correlation Heatmap, and Outlier Distribution (Boxplot). |
+
 
 ---
 
