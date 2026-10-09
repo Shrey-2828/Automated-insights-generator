@@ -1,4 +1,4 @@
-# Automated Insight Generation Engine (Assignment 4)
+# Automated Insight Generation Engine
 
 An automated analytics and natural-language insight generation engine for district-level healthcare performance monitoring. Built with Python, Pandas, and Streamlit.
 
@@ -216,15 +216,6 @@ Each insight conforms to the exact output specification:
 
 ---
 
-## ⚠️ Statistical Limitation Notice
-
-> **Crucial Statistical Finding (Rubric Requirement)**:
-> In the sample dataset ($2 \text{ months} \times 6 \text{ districts} = 12 \text{ total rows}$), Pearson correlation coefficients are **statistically fragile**. 
-> An extreme outlier in a single district (such as Mehsana, where ANC dropped to 42 while high-risk cases rose to 28) exerts high leverage on the covariance calculation, artificially inflating the correlation magnitude.
-> A minimum of $\ge 3$ months per district and $\ge 10$ districts is recommended for stable trend and correlation inference.
-
----
-
 ## 📊 Sample Output
 
 ### Correlation Matrix (`correlation_matrix.csv`)
@@ -247,7 +238,7 @@ INS-0011,correlation,anc_coverage:high_risk_cases,State-wide,2026-07..2026-08,r=
 
 ---
 
-## ✅ Evaluation Checklist (10/10 Marks)
+## ✅ Evaluation Checklist
 
 - [x] **Data loading + validation + filters in UI (1.5 marks)**: Ingested via Pandas, head/info/missing counts reported, live multi-select filters in Streamlit sidebar.
 - [x] **Trend detection with configurable threshold (2.0 marks)**: Configurable slider, percentage change calculated chronologically per district, flags significant trends.
